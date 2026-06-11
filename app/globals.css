@@ -1,0 +1,335 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #0a0a0b;
+  --foreground: #f5f5f6;
+  --surface-primary: #0f0f11;
+  --surface-secondary: #1a1a1f;
+  --surface-tertiary: #242429;
+  --electric-cyan: #00d9ff;
+  --electric-cyan-dark: #00a8cc;
+  --electric-cyan-light: #66e6ff;
+  --text-secondary: #b0b0b8;
+  --text-tertiary: #8a8a94;
+  --graphite-600: #3a3a42;
+  --graphite-700: #2a2a30;
+  
+  /* Vibrant Accent Colors */
+  --purple-neon: #9d4edd;
+  --magenta: #ff006e;
+  --indigo-bright: #3a86ff;
+  --lime: #06ffa5;
+  --orange-neon: #ff6b35;
+  --blue-accent: #0099ff;
+  --pink-bright: #ff006e;
+  --violet-accent: #a855f7;
+}
+
+@layer base {
+  * {
+    outline: none;
+  }
+  
+  body {
+    background-color: rgb(10 10 11);
+    color: rgb(245 245 246);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Typography Base Styles */
+  h1 {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.625;
+  }
+
+  a {
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+  }
+}
+
+@layer components {
+  /* Section Container */
+  .section-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  /* Grid utilities */
+  .grid-col-4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid-col-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid-col-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .grid-col-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid-col-3 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid-col-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .grid-col-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid-col-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* Flex utilities */
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgb(10 10 11);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(58 58 66);
+    border-radius: 0.375rem;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(74 74 84);
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: rgb(0 217 255);
+    color: rgb(10 10 11);
+  }
+
+  /* Gradient Text Utility */
+  .gradient-text {
+    background: linear-gradient(135deg, #00d9ff, #9d4edd, #ff006e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-warm {
+    background: linear-gradient(135deg, #ff6b35, #ff006e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow Effects */
+  .glow-cyan {
+    filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.3));
+  }
+
+  .glow-purple {
+    filter: drop-shadow(0 0 20px rgba(157, 78, 221, 0.3));
+  }
+
+  .glow-magenta {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 110, 0.3));
+  }
+
+  /* Animation Keyframes */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
+      opacity: 1;
+    }
+    50% {
+      filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.6));
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes rotate-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes bounce-soft {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #ff006e, #9d4edd, #3a86ff, #00d9ff);
+    background-size: 400% 400%;
+    animation: rotate-gradient 15s ease infinite;
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #f5f5f6 25%, #00d9ff 50%, #f5f5f6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .pulse-element {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .float-element {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .scale-in-element {
+    animation: scale-in 0.5s ease-out;
+  }
+}
