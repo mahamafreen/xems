@@ -30,7 +30,7 @@ const services = [
     shortDesc: 'Scalable and secure cloud solutions',
     fullDesc: 'We architect and manage cloud infrastructure on AWS, Google Cloud, and Azure. Ensuring security, scalability, and cost-efficiency at every layer.',
     benefits: ['99.99% Uptime', 'Auto-scaling', 'Security Compliance', 'Disaster Recovery'],
-    stack: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'CloudFormation'],
+    stack: ['AWS', 'Kubernetes', 'Docker',  'CloudFormation'],
     process: ['Assessment', 'Planning', 'Migration', 'Optimization', 'Monitoring']
   },
   {
@@ -39,7 +39,7 @@ const services = [
     shortDesc: 'Analytics and data-driven insights',
     fullDesc: 'Advanced data engineering, warehousing, and analytics platforms that transform raw data into actionable business intelligence.',
     benefits: ['Real-time Analytics', 'Data Visualization', 'Predictive Models', 'Data Warehouse'],
-    stack: ['PostgreSQL', 'MongoDB', 'Elasticsearch', 'Apache Kafka', 'Power BI'],
+    stack: ['PostgreSQL', 'MongoDB'],
     process: ['Data Audit', 'Schema Design', 'ETL Pipeline', 'Analytics Setup', 'Insights & Reports']
   },
   {
@@ -57,7 +57,7 @@ const services = [
     shortDesc: 'User-centered design excellence',
     fullDesc: 'Beautiful, intuitive interfaces that users love. From wireframes to interactive prototypes, we design experiences that convert.',
     benefits: ['User Research', 'Wireframing', 'Interactive Prototypes', 'Design Systems'],
-    stack: ['Figma', 'Adobe XD', 'Framer', 'Storybook', 'Design Tokens'],
+    stack: ['Figma', 'Adobe XD', 'Framer'],
     process: ['Discovery', 'User Research', 'Wireframes', 'Prototyping', 'Handoff to Dev']
   }
 ]

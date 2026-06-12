@@ -69,7 +69,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-text-secondary text-sm mb-1">Email</p>
-                      <p className="text-foreground">maham@xems.dev</p>
+                      <p className="text-foreground">xemsinfos@gmail.com</p>
                     </div>
                   </a>
                 </ScrollReveal>
@@ -81,7 +81,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-text-secondary text-sm mb-1">Phone</p>
-                      <p className="text-foreground">+92 (334) 123-4567</p>
+                      <p className="text-foreground">0318-5850810</p>
                     </div>
                   </a>
                 </ScrollReveal>
@@ -107,7 +107,7 @@ export default function Contact() {
                     <div>
                       <p className="text-text-secondary text-sm mb-1">Hours</p>
                       <p className="text-foreground">Mon - Fri</p>
-                      <p className="text-text-secondary text-sm">9:00 AM - 6:00 PM </p>
+                      <p className="text-text-secondary text-sm">9:00 AM - 3:00 PM </p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -125,7 +125,7 @@ export default function Contact() {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          placeholder="Maham Afreen"
+                          placeholder="Full Name"
                           required
                           className="w-full px-4 py-3 bg-surface-primary border border-graphite-700 rounded-lg text-foreground placeholder-text-tertiary focus:border-electric-cyan transition-colors focus-ring"
                         />
@@ -138,7 +138,7 @@ export default function Contact() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          placeholder="maham@example.com"
+                          placeholder="Email Address"
                           required
                           className="w-full px-4 py-3 bg-surface-primary border border-graphite-700 rounded-lg text-foreground placeholder-text-tertiary focus:border-electric-cyan transition-colors focus-ring"
                         />
@@ -192,14 +192,14 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <ScrollReveal variant="fadeUp">
                 <Card variant="dark" className="text-center">
-                  <div className="text-3xl font-heading font-bold text-electric-cyan mb-2">7+</div>
+                  <div className="text-3xl font-heading font-bold text-electric-cyan mb-2">5+</div>
                   <p className="text-text-secondary">Years of Experience</p>
                 </Card>
               </ScrollReveal>
 
               <ScrollReveal variant="fadeUp" delay={0.1}>
                 <Card variant="dark" className="text-center">
-                  <div className="text-3xl font-heading font-bold text-electric-cyan mb-2">20+</div>
+                  <div className="text-3xl font-heading font-bold text-electric-cyan mb-2">10+</div>
                   <p className="text-text-secondary">Projects Completed</p>
                 </Card>
               </ScrollReveal>

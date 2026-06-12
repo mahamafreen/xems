@@ -81,7 +81,7 @@ export const HeroSection = () => {
 
           {/* Subheadline */}
           <motion.p variants={itemVariants} className="text-xl md:text-2xl text-text-secondary max-w-2xl mb-8">
-            We design, build, and maintain cutting-edge digital systems that power ambitious businesses at scale. From conception to deployment—complete technology transformation.
+            We design, build, and maintain cutting-edge digital systems that power ambitious businesses at scale. 
           </motion.p>
 
           {/* CTAs */}

@@ -82,7 +82,7 @@ export default function About() {
                 <div>
                   <h2 className="text-3xl font-heading font-semibold mb-4">Our Mission</h2>
                   <p className="text-text-secondary leading-relaxed mb-4">
-                    To empower organizations through cutting-edge technology infrastructure and strategic digital transformation. We believe in building lasting partnerships with our clients, understanding their challenges deeply, and delivering solutions that not only meet today's needs but anticipate tomorrow's opportunities.
+                    To empower businesses by engineering custom software solutions that streamline operations, drive growth, and solve complex technical challenges with precision.
                   </p>
                   <p className="text-text-secondary leading-relaxed">
                     Every project is an opportunity to demonstrate our commitment to excellence, innovation, and client success.
@@ -105,120 +105,7 @@ export default function About() {
           </SectionContainer>
         </Section>
 
-        {/* Core Values */}
-        <Section variant="dark" withDivider>
-          <SectionContainer>
-            <ScrollReveal variant="fadeUp" className="mb-12">
-              <h2 className="text-4xl font-heading font-semibold mb-4">Core Values</h2>
-              <p className="text-text-secondary text-lg max-w-2xl">
-                These principles guide every decision we make and every project we undertake.
-              </p>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {values.map((value, index) => {
-                const Icon = value.icon
-                return (
-                  <ScrollReveal key={value.title} variant="fadeUp" delay={index * 0.1}>
-                    <Card variant="dark">
-                      <div className="w-12 h-12 bg-electric-cyan/10 rounded-lg flex items-center justify-center mb-6">
-                        <Icon className="text-electric-cyan" size={28} />
-                      </div>
-                      <h3 className="font-heading font-semibold text-xl mb-3">{value.title}</h3>
-                      <p className="text-text-secondary">{value.description}</p>
-                    </Card>
-                  </ScrollReveal>
-                )
-              })}
-            </div>
-          </SectionContainer>
-        </Section>
-
-        {/* Our Team */}
-        <Section variant="default" withDivider>
-          <SectionContainer>
-            <ScrollReveal variant="fadeUp" className="text-center mb-12">
-              <h2 className="text-4xl font-heading font-semibold mb-4">Our Team</h2>
-              <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-                150+ talented engineers, designers, and strategists united by a passion for building exceptional technology.
-              </p>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { title: 'Engineers', count: '4+', desc: 'Full-stack developers, backend specialists, and infrastructure experts' },
-                { title: 'Designers', count: '2+', desc: 'UI/UX designers, product designers, and design system specialists' },
-                { title: 'Leaders', count: '3+', desc: 'Project managers, architects, and consultants' }
-              ].map((team, index) => (
-                <ScrollReveal key={team.title} variant="fadeUp" delay={index * 0.1}>
-                  <Card variant="default" className="text-center">
-                    <div className="text-electric-cyan text-4xl font-heading font-bold mb-2">{team.count}</div>
-                    <h3 className="font-heading font-semibold text-lg mb-2">{team.title}</h3>
-                    <p className="text-text-secondary text-sm">{team.desc}</p>
-                  </Card>
-                </ScrollReveal>
-              ))}
-            </div>
-          </SectionContainer>
-        </Section>
-
-        {/* Divisions */}
-        <Section variant="dark" withDivider>
-          <SectionContainer>
-            <ScrollReveal variant="fadeUp" className="mb-12">
-              <h2 className="text-4xl font-heading font-semibold mb-4">Our Divisions</h2>
-              <p className="text-text-secondary text-lg max-w-2xl">
-                Organized expertise across six specialized areas to deliver comprehensive solutions.
-              </p>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {divisions.map((division, index) => (
-                <ScrollReveal key={division.name} variant="fadeUp" delay={index * 0.05}>
-                  <Card variant="dark">
-                    <h3 className="font-heading font-semibold text-lg mb-3 text-electric-cyan">{division.name}</h3>
-                    <p className="text-text-secondary">{division.desc}</p>
-                  </Card>
-                </ScrollReveal>
-              ))}
-            </div>
-          </SectionContainer>
-        </Section>
-
-        {/* Timeline */}
-        <Section variant="default" withDivider>
-          <SectionContainer>
-            <ScrollReveal variant="fadeUp" className="text-center mb-12">
-              <h2 className="text-4xl font-heading font-semibold mb-4">Our Journey</h2>
-              <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-                Over a decade of building incredible technology for forward-thinking organizations.
-              </p>
-            </ScrollReveal>
-
-            <div className="max-w-2xl mx-auto space-y-8">
-              {[
-                { year: '2013', event: 'Founded with vision to transform digital infrastructure' },
-                { year: '2016', event: 'Expanded to 50+ team members across multiple offices' },
-                { year: '2018', event: 'Launched AI and machine learning division' },
-                { year: '2021', event: 'Reached 100M+ users impacted by our solutions' },
-                { year: '2024', event: 'Celebrating 12 years of innovation and excellence' }
-              ].map((milestone, index) => (
-                <ScrollReveal key={milestone.year} variant="slideInLeft" delay={index * 0.1}>
-                  <div className="flex gap-6 items-start">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-electric-cyan/10 rounded-full flex items-center justify-center border border-electric-cyan/30">
-                        <span className="text-electric-cyan font-heading font-bold">{milestone.year}</span>
-                      </div>
-                    </div>
-                    <div className="flex-grow pt-2">
-                      <p className="text-text-secondary text-lg">{milestone.event}</p>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </SectionContainer>
-        </Section>
+       
       </main>
       <Footer />
     </div>

@@ -7,59 +7,48 @@ import { ExternalLink } from 'lucide-react'
 
 const projects = [
   {
-    title: 'Global Payment Platform',
-    category: 'Backend / Infrastructure',
-    description: 'Engineered a multi-currency payment system processing 500M+ transactions annually. Built with microservices architecture, Redis caching, and real-time settlement.',
-    challenge: 'Process millions of transactions daily with sub-second latency and 99.99% uptime',
-    solution: 'Microservices architecture with Kubernetes, PostgreSQL sharding, Redis caching, and event-driven processing',
-    results: ['500M+ transactions annually', '99.99% uptime maintained', 'Sub-second settlement', '<50ms p99 latency'],
-    stack: ['Node.js', 'PostgreSQL', 'Redis', 'Kubernetes', 'AWS', 'GraphQL'],
+    title: 'Archman Consultants',
+    category: ['Next.js', 'TypeScript', 'Tailwind'],
+    description: 'An archtitectural consultancy website with project showcases using interactive data visualizations.',
+    challenge: 'Handle streaming data at scale while providing real-time insights to 10k+ daily active users',
+    stack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'D3.js'],
+  },
+  {
+    title: 'Cactus Coffee',
+    category: ['React', 'Tailwind', 'Node.js'],
+    description: 'An e-commerce website for a coffee shop, featuring a modern design and seamless user experience.',
+    challenge: 'Create a responsive and performant shopping experience that works across all devices',
+    stack: ['React', 'Tailwind', 'Node.js'],
   },
   {
     title: 'Real-Time Analytics Dashboard',
-    category: 'Full Stack / Data',
+    category: ['Full Stack', 'Data'],
     description: 'Developed a data visualization platform ingesting 1TB+ daily. Features real-time dashboards, custom reports, and predictive analytics.',
     challenge: 'Handle streaming data at scale while providing real-time insights to 10k+ daily active users',
-    solution: 'Kafka for data ingestion, Elasticsearch for queries, React with WebSockets for real-time UI updates',
-    results: ['1TB+ daily ingestion', '<200ms dashboard load', '99.9% query accuracy', '10k+ concurrent users'],
     stack: ['React', 'Apache Kafka', 'Elasticsearch', 'TimescaleDB', 'Python', 'D3.js'],
   },
   {
     title: 'AI-Powered Content Platform',
-    category: 'Full Stack / AI',
+    category: ['Full Stack', 'AI'],
     description: 'Created an intelligent content management system with ML-driven recommendations. Serves 50M+ users across mobile and web.',
     challenge: 'Deliver personalized content recommendations at scale with sub-500ms response times',
-    solution: 'ML pipeline with TensorFlow, vector embeddings in Pinecone, Node.js API, React Native mobile app',
-    results: ['50M+ users', '45% engagement increase', '85% recommendation accuracy', 'Multi-platform launch'],
     stack: ['Python', 'TensorFlow', 'FastAPI', 'MongoDB', 'React', 'React Native'],
   },
   {
     title: 'Enterprise Resource Planning System',
-    category: 'Backend / Integration',
+    category: ['Backend', 'Integration'],
     description: 'Built comprehensive ERP system integrating with 30+ third-party services. Handles complex workflows and reporting.',
     challenge: 'Integrate disparate systems while maintaining data consistency and audit trails',
-    solution: 'Modular architecture with service adapters, event sourcing, and comprehensive audit logging',
-    results: ['30+ integrations', 'Zero data loss', 'Full audit trail', 'Multi-tenant support'],
     stack: ['Node.js', 'PostgreSQL', 'RabbitMQ', 'GraphQL', 'Docker', 'Next.js'],
   },
   {
     title: 'Mobile Social Network',
-    category: 'Mobile / Full Stack',
+    category: ['Mobile', 'Full Stack'],
     description: 'Engineered a mobile-first social platform with real-time messaging, notifications, and media streaming.',
     challenge: 'Build real-time collaborative features with offline support for global audience',
-    solution: 'React Native frontend, Node.js backend with WebSocket support, CDN for media delivery',
-    results: ['5M+ downloads', '4.8★ rating', 'Real-time messaging', 'Live streaming support'],
     stack: ['React Native', 'Node.js', 'PostgreSQL', 'Redis', 'Socket.io', 'AWS Cloudfront'],
   },
-  {
-    title: 'Healthcare Data Platform',
-    category: 'Compliance / Data',
-    description: 'HIPAA-compliant platform for managing patient records, scheduling, and telemedicine capabilities.',
-    challenge: 'Meet strict compliance requirements while maintaining excellent user experience',
-    solution: 'Encrypted databases, role-based access control, audit logging, secure video infrastructure',
-    results: ['HIPAA compliant', '10k+ healthcare providers', 'Zero security incidents', '99.95% uptime'],
-    stack: ['Next.js', 'PostgreSQL', 'HashiCorp Vault', 'Twilio', 'AWS', 'Kubernetes'],
-  },
+  
 ]
 
 export default function Projects() {
@@ -116,19 +105,6 @@ export default function Projects() {
                             </span>
                           ))}
                         </div>
-                      </div>
-
-                      {/* Results Sidebar */}
-                      <div className="bg-surface-primary border border-graphite-700 rounded-lg p-6">
-                        <h4 className="font-heading font-semibold text-electric-cyan mb-4">Results</h4>
-                        <ul className="space-y-3">
-                          {project.results.map((result) => (
-                            <li key={result} className="text-text-secondary text-sm flex gap-3">
-                              <span className="text-electric-cyan flex-shrink-0">✓</span>
-                              <span>{result}</span>
-                            </li>
-                          ))}
-                        </ul>
                       </div>
                     </div>
                   </Card>

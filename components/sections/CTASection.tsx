@@ -50,22 +50,8 @@ export const CTASection = () => {
                 Start Your Project <ArrowRight size={20} />
               </Button>
             </Link>
-            <a href="tel:+1234567890">
-              <Button variant="secondary" size="lg">
-                Call Us
-              </Button>
-            </a>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="mt-12 pt-12 border-t border-graphite-700">
-            <p className="text-text-secondary mb-4">Trusted by leading companies worldwide</p>
-            <div className="flex justify-center gap-12 flex-wrap">
-              <div className="text-2xl font-heading font-700 text-text-tertiary">TechCorp</div>
-              <div className="text-2xl font-heading font-700 text-text-tertiary">InnovateLabs</div>
-              <div className="text-2xl font-heading font-700 text-text-tertiary">GlobalScale</div>
-              <div className="text-2xl font-heading font-700 text-text-tertiary">FutureSys</div>
-            </div>
-          </motion.div>
         </motion.div>
       </SectionContainer>
     </Section>

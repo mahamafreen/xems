@@ -11,19 +11,9 @@ import { ArrowRight } from 'lucide-react'
 
 const projects = [
   {
-    title: 'Global Payment Platform',
-    description: 'Engineered a multi-currency payment system processing 500M+ transactions annually. Built with microservices, Redis caching, and real-time settlement.',
-    stack: ['Node.js', 'PostgreSQL', 'Redis', 'Kubernetes'],
-    metrics: '99.99% Uptime',
-    accentColor: 'from-electric-cyan to-indigo-bright',
-    metricsBg: 'bg-electric-cyan/10',
-    metricsText: 'text-electric-cyan',
-    borderColor: 'border-electric-cyan/20',
-  },
-  {
-    title: 'Real-Time Analytics Dashboard',
-    description: 'Developed a data visualization platform ingesting 1TB+ daily. Features real-time dashboards, custom reports, and predictive analytics.',
-    stack: ['React', 'Apache Kafka', 'Elasticsearch', 'TimescaleDB'],
+    title: 'Archman Consultants',
+    description: 'An architectural consultancy website with project showcases using interactive data visualizations.',
+    stack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'D3.js'],
     metrics: '< 200ms Load Time',
     accentColor: 'from-purple-neon to-magenta',
     metricsBg: 'bg-purple-neon/10',
@@ -31,9 +21,9 @@ const projects = [
     borderColor: 'border-purple-neon/20',
   },
   {
-    title: 'AI-Powered Content Platform',
-    description: 'Created an intelligent content management system with ML-driven recommendations. Serves 50M+ users across mobile and web.',
-    stack: ['Python', 'TensorFlow', 'FastAPI', 'MongoDB'],
+    title: 'Cactus Coffee',
+    description: 'An e-commerce website for a coffee shop, featuring a modern design and seamless user experience.',
+    stack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Stripe'],
     metrics: '45% Engagement Increase',
     accentColor: 'from-indigo-bright to-blue-accent',
     metricsBg: 'bg-indigo-bright/10',
