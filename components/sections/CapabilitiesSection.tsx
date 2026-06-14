@@ -119,7 +119,7 @@ export const CapabilitiesSection = () => {
               </div>
               
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Custom Tool Built in 48 Hours
+                Custom Tool Built in 72 Hours
               </h3>
               
               <div className="flex items-baseline gap-2 mb-4">
@@ -138,7 +138,7 @@ export const CapabilitiesSection = () => {
                   href="/contact"
                   className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer inline-block"
                 >
-                   Start Your $250 Tool
+                   Start Your 5000 PKR Tool
                 </a>
                 <a 
                   href="/projects"
