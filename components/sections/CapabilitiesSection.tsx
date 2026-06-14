@@ -92,7 +92,7 @@ export const CapabilitiesSection = () => {
           <div className="mb-12">
             <h2 className="text-4xl font-heading font-600 mb-4">Our Capabilities</h2>
             <p className="text-text-secondary text-lg max-w-2xl">
-              Comprehensive technology solutions spanning the entire spectrum of digital infrastructure and enterprise transformation.
+              Custom Software Built in 48 Hours. $250 Flat Fee.
             </p>
           </div>
         </ScrollReveal>
