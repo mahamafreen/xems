@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Section, SectionContainer } from '@/components/Section'
+import { Card } from '@/components/Card'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { Code, Smartphone, Zap, Palette, Bot, Database, Landmark } from 'lucide-react'
 
@@ -88,75 +89,13 @@ export const CapabilitiesSection = () => {
     <Section variant="default" withDivider>
       <SectionContainer>
         <ScrollReveal variant="fadeUp">
-          <div className="mb-8">
-            <h2 className="text-4xl font-heading font-600 mb-2">Our Capabilities</h2>
-            <p className="text-text-secondary">
-              We build tools that solve real business problems
+          <div className="mb-12">
+            <h2 className="text-4xl font-heading font-600 mb-4">Our Capabilities</h2>
+            <p className="text-text-secondary text-lg max-w-2xl">
+              Custom Software Built in 48 Hours. $250 Flat Fee.
             </p>
           </div>
         </ScrollReveal>
-
-        {/* PROMINENT OFFER SECTION */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-8 shadow-xl">
-            {/* Animated background effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]" />
-            
-            <div className="relative z-10">
-              <div className="flex flex-wrap gap-3 mb-4">
-                <span className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium text-white">
-                   Limited Offer
-                </span>
-                <span className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium text-white">
-                   48-Hour Delivery
-                </span>
-              </div>
-              
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Custom Tool Built in 72 Hours
-              </h3>
-              
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-5xl md:text-6xl font-black text-white">RS 5000</span>
-                <span className="text-white/80 text-xl">flat fee</span>
-                <span className="text-white/60 line-through text-lg ml-3">RS 11,500+</span>
-              </div>
-              
-              <p className="text-white/90 text-lg mb-6 max-w-2xl">
-                You have a manual, repetitive task. I'll build you a custom automation tool. 
-                <strong className="text-white block mt-1">Delivered in 2 days or it's FREE.</strong>
-              </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="/contact"
-                  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer inline-block"
-                >
-                   Start Your 5000 PKR Tool
-                </a>
-                <a 
-                  href="/projects"
-                  className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-bold hover:bg-white/30 transition-colors duration-200 cursor-pointer inline-block"
-                >
-                  See Our Work
-                </a>
-              </div>
-              
-              <div className="flex flex-wrap gap-4 mt-6 pt-4 border-t border-white/20 text-white/70 text-sm">
-                <span className="flex items-center gap-1"> You keep ownership</span>
-                <span className="flex items-center gap-1"> Code rights for resale</span>
-                <span className="flex items-center gap-1"> Pay only on delivery</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-        {/* END OFFER SECTION */}
 
         <motion.div
           variants={containerVariants}
@@ -165,7 +104,7 @@ export const CapabilitiesSection = () => {
           viewport={{ once: true, margin: '50px' }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {capabilities.map((capability) => {
+          {capabilities.map((capability, index) => {
             const Icon = capability.icon
             return (
               <motion.div key={capability.title} variants={itemVariants}>
