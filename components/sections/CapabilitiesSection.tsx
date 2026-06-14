@@ -123,9 +123,9 @@ export const CapabilitiesSection = () => {
               </h3>
               
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-5xl md:text-6xl font-black text-white">$250</span>
+                <span className="text-5xl md:text-6xl font-black text-white">RS 5000</span>
                 <span className="text-white/80 text-xl">flat fee</span>
-                <span className="text-white/60 line-through text-lg ml-3">$1,500+</span>
+                <span className="text-white/60 line-through text-lg ml-3">RS 11,500+</span>
               </div>
               
               <p className="text-white/90 text-lg mb-6 max-w-2xl">
