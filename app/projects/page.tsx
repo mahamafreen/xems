@@ -48,7 +48,7 @@ const projects = [
     challenge: 'Build real-time collaborative features with offline support for global audience',
     stack: ['React Native', 'Node.js', 'PostgreSQL', 'Redis', 'Socket.io', 'AWS Cloudfront'],
   },
-  
+
 ]
 
 export default function Projects() {
@@ -80,8 +80,8 @@ export default function Projects() {
                       <div className="lg:col-span-2">
                         <div className="flex items-start justify-between mb-4">
                           <h3 className="font-heading font-semibold text-2xl">{project.title}</h3>
-                          <span className="px-3 py-1 bg-electric-cyan/10 text-electric-cyan text-xs font-semibold rounded border border-electric-cyan/30 whitespace-nowrap ml-4">
-                            {project.category}
+                          <span className="px-3 py-1 bg-electric-cyan/10 text-electric-cyan text-xs font-semibold rounded border border-electric-cyan/30 ml-4 lg:text-right">
+                            {project.category.join(', ')}
                           </span>
                         </div>
 
@@ -91,10 +91,6 @@ export default function Projects() {
                           <div>
                             <h4 className="font-heading font-semibold text-electric-cyan text-sm mb-2">Challenge</h4>
                             <p className="text-text-secondary text-sm">{project.challenge}</p>
-                          </div>
-                          <div>
-                            <h4 className="font-heading font-semibold text-electric-cyan text-sm mb-2">Solution</h4>
-                            <p className="text-text-secondary text-sm">{project.solution}</p>
                           </div>
                         </div>
 
