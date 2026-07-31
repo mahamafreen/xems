@@ -17,21 +17,41 @@ export default function Contact() {
     message: ''
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errorStatus, setErrorStatus] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, this would send to a backend
-    console.log('[v0] Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setFormData({ name: '', email: '', company: '', message: '' })
-      setSubmitted(false)
-    }, 3000)
+    setIsSubmitting(true)
+    setErrorStatus(null)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+
+      if (!res.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      setSubmitted(true)
+      setTimeout(() => {
+        setFormData({ name: '', email: '', company: '', message: '' })
+        setSubmitted(false)
+      }, 3000)
+    } catch (error) {
+      console.error('Submit error:', error)
+      setErrorStatus('Failed to send message. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -169,13 +189,18 @@ export default function Contact() {
                         />
                       </div>
 
-                      <Button variant="primary" type="submit" className="w-full">
-                        {submitted ? 'Message Sent!' : 'Send Message'}
+                      <Button variant="primary" type="submit" className="w-full" disabled={isSubmitting || submitted}>
+                        {isSubmitting ? 'Sending...' : submitted ? 'Message Sent!' : 'Send Message'}
                       </Button>
 
                       {submitted && (
                         <p className="text-electric-cyan text-sm text-center">
                           Thank you! We&apos;ll get back to you within 24 hours.
+                        </p>
+                      )}
+                      {errorStatus && (
+                        <p className="text-red-500 text-sm text-center">
+                          {errorStatus}
                         </p>
                       )}
                     </form>

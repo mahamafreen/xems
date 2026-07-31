@@ -25,7 +25,7 @@ export const HeroSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: 'easeOut' as const },
     },
   }
 
@@ -66,7 +66,7 @@ export const HeroSection = () => {
           {/* Main Headline */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-heading font-700 mb-6">
             Enterprise Technology{' '}
-            <span 
+            <span
               className="inline-block"
               style={{
                 background: 'linear-gradient(135deg, #00d9ff, #9d4edd, #ff006e)',
@@ -81,7 +81,7 @@ export const HeroSection = () => {
 
           {/* Subheadline */}
           <motion.p variants={itemVariants} className="text-xl md:text-2xl text-text-secondary max-w-2xl mb-8">
-            We design, build, and maintain cutting-edge digital systems that power ambitious businesses at scale. 
+            We design, build, and maintain cutting-edge digital systems that power ambitious businesses at scale.
           </motion.p>
 
           {/* CTAs */}
@@ -94,22 +94,6 @@ export const HeroSection = () => {
             <Link href="/about">
               <Button variant="secondary" size="lg">Learn More</Button>
             </Link>
-          </motion.div>
-
-          {/* Stats Row */}
-          <motion.div variants={itemVariants} className="mt-16 pt-12 border-t border-gradient-to-r from-transparent via-purple-neon to-transparent grid grid-cols-3 gap-8">
-            <div className="group">
-              <div className="text-3xl font-heading font-700 bg-gradient-to-r from-electric-cyan to-purple-neon bg-clip-text text-transparent mb-2 group-hover:from-purple-neon group-hover:to-magenta transition-all duration-300">50+</div>
-              <p className="text-text-secondary text-sm">Projects Delivered</p>
-            </div>
-            <div className="group">
-              <div className="text-3xl font-heading font-700 bg-gradient-to-r from-indigo-bright to-electric-cyan bg-clip-text text-transparent mb-2 group-hover:from-magenta group-hover:to-indigo-bright transition-all duration-300">100M+</div>
-              <p className="text-text-secondary text-sm">Users Impacted</p>
-            </div>
-            <div className="group">
-              <div className="text-3xl font-heading font-700 bg-gradient-to-r from-purple-neon to-indigo-bright bg-clip-text text-transparent mb-2 group-hover:from-orange-neon group-hover:to-purple-neon transition-all duration-300">12+</div>
-              <p className="text-text-secondary text-sm">Years Experience</p>
-            </div>
           </motion.div>
         </motion.div>
       </SectionContainer>
