@@ -16,7 +16,7 @@ export async function POST(req: Request) {
         }
 
         const { data, error } = await resend.emails.send({
-            from: 'XEMS Contact Form <onboarding@resend.dev>',
+            from: 'XEMS Contact Form <contact@xems.space>',
             to: ['contact@xems.space'],
             replyTo: email,
             subject: `New Contact Form Mission from ${name} at ${company || 'Unknown Company'}`,
