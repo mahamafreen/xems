@@ -45,7 +45,7 @@ export const CTASection = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact/page.tsx">
+            <Link href="/contact">
               <Button variant="primary" size="lg" className="gap-2">
                 Start Your Project <ArrowRight size={20} />
               </Button>
