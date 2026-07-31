@@ -83,19 +83,19 @@ export default function Contact() {
                 </ScrollReveal>
 
                 <ScrollReveal variant="fadeUp" delay={0.1}>
-                  <a href="mailto:hello@xems.dev" className="flex gap-4 items-start hover:opacity-80 transition-opacity">
+                  <a href="mailto:contact@xems.space" className="flex gap-4 items-start hover:opacity-80 transition-opacity">
                     <div className="w-10 h-10 bg-electric-cyan/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-electric-cyan/20">
                       <Mail className="text-electric-cyan" size={20} />
                     </div>
                     <div>
                       <p className="text-text-secondary text-sm mb-1">Email</p>
-                      <p className="text-foreground">xemsinfos@gmail.com</p>
+                      <p className="text-foreground">contact@xems.space</p>
                     </div>
                   </a>
                 </ScrollReveal>
 
                 <ScrollReveal variant="fadeUp" delay={0.15}>
-                  <a href="tel:+1234567890" className="flex gap-4 items-start hover:opacity-80 transition-opacity">
+                  <a href="tel:+923185850810" className="flex gap-4 items-start hover:opacity-80 transition-opacity">
                     <div className="w-10 h-10 bg-electric-cyan/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-electric-cyan/20">
                       <Phone className="text-electric-cyan" size={20} />
                     </div>

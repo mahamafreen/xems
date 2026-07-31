@@ -50,9 +50,15 @@ export async function POST(req: Request) {
             { status: 200 }
         );
     } catch (error: any) {
-        console.error('Contact form error:', error);
+        console.error('Contact form error:', error?.message || error);
+        console.error('SMTP Config:', {
+            host: process.env.SMTP_HOST,
+            port: process.env.SMTP_PORT,
+            user: process.env.EMAIL_USER,
+            passSet: !!process.env.EMAIL_PASS,
+        });
         return NextResponse.json(
-            { error: 'Failed to send email. Please check server logs.' },
+            { error: error?.message || 'Failed to send email. Please check server logs.' },
             { status: 500 }
         );
     }
