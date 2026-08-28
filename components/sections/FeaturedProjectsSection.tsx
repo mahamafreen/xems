@@ -1,10 +1,8 @@
 'use client'
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Section, SectionContainer } from '@/components/Section'
-import { Card } from '@/components/Card'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { Button } from '@/components/Button'
 import { ArrowRight } from 'lucide-react'
@@ -16,6 +14,7 @@ const projects = [
     stack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'D3.js'],
     metrics: '< 200ms Load Time',
     accentColor: 'from-purple-neon to-magenta',
+    accentGradient: 'linear-gradient(135deg, #9d4edd, #ff006e)',
     metricsBg: 'bg-purple-neon/10',
     metricsText: 'text-purple-neon',
     borderColor: 'border-purple-neon/20',
@@ -26,30 +25,31 @@ const projects = [
     stack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Stripe'],
     metrics: '45% Engagement Increase',
     accentColor: 'from-indigo-bright to-blue-accent',
+    accentGradient: 'linear-gradient(135deg, #3a86ff, #0099ff)',
     metricsBg: 'bg-indigo-bright/10',
     metricsText: 'text-indigo-bright',
     borderColor: 'border-indigo-bright/20',
   },
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6 },
+  },
+}
+
 export const FeaturedProjectsSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6 },
-    },
-  }
-
   return (
     <Section variant="default" withDivider>
       <SectionContainer>
@@ -77,7 +77,12 @@ export const FeaturedProjectsSection = () => {
                 
                 <div className="relative flex flex-col md:flex-row justify-between md:items-start gap-6">
                   <div className="flex-1">
-                    <h3 className="font-heading font-600 text-xl mb-3 text-foreground group-hover:bg-gradient-to-r group-hover:${project.accentColor} group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">{project.title}</h3>
+                    <h3
+                      className="font-heading font-600 text-xl mb-3 text-foreground group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300"
+                      style={{ backgroundImage: project.accentGradient }}
+                    >
+                      {project.title}
+                    </h3>
                     <p className="text-text-secondary mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.stack.map((tech) => (

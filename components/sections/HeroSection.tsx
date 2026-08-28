@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/Button'
@@ -8,27 +7,27 @@ import { Section, SectionContainer } from '@/components/Section'
 import { HeroSlideshow } from '@/components/HeroSlideshow'
 import { ArrowRight } from 'lucide-react'
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' as const },
+  },
+}
+
 export const HeroSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' as const },
-    },
-  }
-
   return (
     <Section variant="dark" className="relative overflow-hidden">
       {/* Hero background slideshow */}
@@ -65,7 +64,7 @@ export const HeroSection = () => {
 
           {/* Main Headline */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-heading font-700 mb-6">
-            Enterprise Technology{' '}
+            Building digital products that move {' '}
             <span
               className="inline-block"
               style={{
@@ -75,13 +74,13 @@ export const HeroSection = () => {
                 backgroundClip: 'text',
               }}
             >
-              Infrastructure
+              Businesses Forward.
             </span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p variants={itemVariants} className="text-xl md:text-2xl text-text-secondary max-w-2xl mb-8">
-            We design, build, and maintain cutting-edge digital systems that power ambitious businesses at scale.
+            Modern websites, web applications, e-commerce experiences and AI-powered solutions built around your business.
           </motion.p>
 
           {/* CTAs */}

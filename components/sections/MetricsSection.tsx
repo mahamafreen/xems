@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Section, SectionContainer } from '@/components/Section'
 import { ScrollReveal } from '@/components/ScrollReveal'

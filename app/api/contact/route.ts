@@ -1,34 +1,64 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+
+function escapeHtml(value: string) {
+    return value
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+}
 
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { name, email, company, message } = body;
+        const { name, email, company = '', message } = body;
 
-        if (!name || !email || !message) {
+        if (
+            typeof name !== 'string' ||
+            typeof email !== 'string' ||
+            typeof message !== 'string' ||
+            !name.trim() ||
+            !message.trim() ||
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+        ) {
             return NextResponse.json(
-                { error: 'Name, email, and message are required fields.' },
+                { error: 'Please provide a valid name, email, and message.' },
                 { status: 400 }
             );
         }
 
+        if (!resendApiKey) {
+            console.error('RESEND_API_KEY is not configured.');
+            return NextResponse.json(
+                { error: 'Email service is not configured.' },
+                { status: 503 }
+            );
+        }
+
+        const resend = new Resend(resendApiKey);
+        const safeName = escapeHtml(name.trim());
+        const safeEmail = escapeHtml(email.trim());
+        const safeCompany = escapeHtml(typeof company === 'string' ? company.trim() : '');
+        const safeMessage = escapeHtml(message.trim());
+
         const { data, error } = await resend.emails.send({
             from: 'XEMS Contact Form <contact@xems.space>',
             to: ['contact@xems.space'],
-            replyTo: email,
-            subject: `New Contact Form Mission from ${name} at ${company || 'Unknown Company'}`,
+                        replyTo: email.trim(),
+                        subject: `New Contact Form Mission from ${name.trim()} at ${company || 'Unknown Company'}`,
             html: `
         <div style="font-family: sans-serif; padding: 20px;">
           <h2 style="color: #6366f1;">New Contact Request</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+                    <p><strong>Name:</strong> ${safeName}</p>
+                    <p><strong>Email:</strong> ${safeEmail}</p>
+                    <p><strong>Company:</strong> ${safeCompany || 'Not provided'}</p>
           <br />
           <h3>Message:</h3>
-          <p style="white-space: pre-wrap;">${message}</p>
+                    <p style="white-space: pre-wrap;">${safeMessage}</p>
         </div>
       `,
         });
