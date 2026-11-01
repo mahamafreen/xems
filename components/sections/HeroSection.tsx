@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/Button'
 import { Section, SectionContainer } from '@/components/Section'
 import { HeroSlideshow } from '@/components/HeroSlideshow'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Calendar } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -54,12 +54,23 @@ export const HeroSection = () => {
           animate="visible"
           className="max-w-3xl"
         >
-          {/* Badge */}
-          <motion.div variants={itemVariants}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-electric-cyan/30 bg-electric-cyan/5 mb-6">
+          {/* Badges */}
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-electric-cyan/30 bg-electric-cyan/5">
               <div className="w-2 h-2 rounded-full bg-electric-cyan animate-pulse" />
               <span className="text-electric-cyan text-sm font-600">Building Tomorrow&apos;s Infrastructure</span>
             </div>
+            <a
+              href="#upcoming-events"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-neon/40 bg-purple-neon/10 hover:bg-purple-neon/20 hover:border-purple-neon text-purple-neon text-sm font-semibold transition-all duration-300 group cursor-pointer"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-magenta opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-magenta"></span>
+              </span>
+              <span>2 Upcoming Events</span>
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </a>
           </motion.div>
 
           {/* Main Headline */}
@@ -84,14 +95,24 @@ export const HeroSection = () => {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-4 items-stretch sm:items-center">
             <Link href="/contact">
-              <Button variant="primary" size="lg" className="gap-2">
+              <Button variant="primary" size="lg" className="gap-2 w-full sm:w-auto">
                 Start Your Project <ArrowRight size={20} />
               </Button>
             </Link>
+            <a href="#upcoming-events">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="gap-2.5 border-electric-cyan/40 hover:border-electric-cyan text-foreground hover:text-electric-cyan hover:shadow-lg hover:shadow-electric-cyan/20 w-full sm:w-auto transition-all duration-300 group"
+              >
+                <Calendar size={18} className="text-electric-cyan group-hover:scale-110 transition-transform" />
+                <span>XEMS EVENTS</span>
+              </Button>
+            </a>
             <Link href="/about">
-              <Button variant="secondary" size="lg">Learn More</Button>
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">Learn More</Button>
             </Link>
           </motion.div>
         </motion.div>

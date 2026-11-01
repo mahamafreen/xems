@@ -3,15 +3,15 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
 
-interface SectionProps {
+interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode
   className?: string
   variant?: 'default' | 'dark' | 'gradient'
   withDivider?: boolean
 }
 
-export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
-  ({ children, className, variant = 'default', withDivider = false }, ref) => {
+export const Section = React.forwardRef<HTMLElement, SectionProps>(
+  ({ children, className, variant = 'default', withDivider = false, ...props }, ref) => {
     const variantStyles = {
       default: 'bg-background',
       dark: 'bg-surface-primary',
@@ -26,6 +26,7 @@ export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
           variantStyles[variant],
           className
         )}
+        {...props}
       >
       {withDivider && (
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-graphite-700 to-transparent" />
